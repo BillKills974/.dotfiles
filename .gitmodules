@@ -1,3 +1,4 @@
 [submodule "nvim/.config/nvim/lua/user"]
 	path = nvim/.config/nvim/lua/user
 	url = https://github.com/BillKills974/astronvim_conf
+	branch = main
