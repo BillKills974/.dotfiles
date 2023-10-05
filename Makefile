@@ -25,13 +25,8 @@ rust_install:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 arch_vscode:
-	mkdir build
-	cd build
-	git clone https://aur.archlinux.org/visual-studio-code-bin.git
-	cd visual-studio-code-bin
-	makepkg -si
-	cd ../..
-	rm -Rf build
+	sh code_install.sh
+	mkdir -p $$HOME/.config/Code
 	stow --target=$$HOME --restow Code
 	cat Code/.config/Code/User/extensions.list | sed -e "s/^/--install-extension /g" | xargs code
 
