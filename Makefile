@@ -1,5 +1,5 @@
 arch_packages:
-	sudo pacman --noconfirm -Sy base base-devel bottom btop btrfs-progs clang cmake compsize dmenu docker dos2unix dosfstools exfatprogs fd firefox fzf gdb gdu git i3 kitty lazygit libimobiledevice lightdm lightdm-gtk-greeter lynx man-db man-pages nasm neofetch neovim nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep rofi stow tcpdump tldr tree ttf-font-awesome unzip usbmuxd usbutils vim xclip xdg-utils xorg-xrandr xorg-server xorg-xinit zip zsh curl wget
+	sudo pacman --noconfirm -Sy base base-devel bottom btop btrfs-progs clang cmake compsize dmenu docker dos2unix dosfstools exfatprogs fd firefox fzf gdb gdu git i3 kitty lazygit libimobiledevice lightdm lightdm-gtk-greeter lynx man-db man-pages nasm neofetch neovim nmap npm openbsd-netcat openssh pciutils pv python-pip python-pynvim python-virtualenv ripgrep rofi stow tcpdump tldr tree ttf-font-awesome unzip usbmuxd usbutils vim xclip xdg-utils xorg-xrandr xorg-server xorg-xinit zip zsh curl wget
 
 gits:
 	rm -Rf $$HOME/.config/nvim
