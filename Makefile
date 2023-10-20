@@ -1,5 +1,5 @@
 arch_packages:
-	sudo pacman --noconfirm -Sy base base-devel bottom btop btrfs-progs clang cmake compsize dmenu docker dos2unix dosfstools exfatprogs fd firefox fzf gdb gdu git i3 kitty lazygit libimobiledevice lightdm lightdm-gtk-greeter lynx man-db man-pages nasm neofetch neovim nmap npm openbsd-netcat openssh pciutils pv python-pip python-pynvim python-virtualenv ripgrep rofi stow tcpdump tldr tree ttf-font-awesome unzip usbmuxd usbutils vim xclip xdg-utils xorg-xrandr xorg-server xorg-xinit zip zsh curl wget
+	sudo pacman --noconfirm -Sy base base-devel bottom btop btrfs-progs clang cmake compsize dmenu docker dos2unix dosfstools exfatprogs fd firefox fzf gdb gdu git i3 julia kitty lazygit libimobiledevice lightdm lightdm-gtk-greeter lynx man-db man-pages nasm neofetch neovim nmap npm openbsd-netcat openssh pciutils pv python-pip python-pynvim python-virtualenv ripgrep rofi stow tcpdump tldr tree tree-sitter tree-sitter-cli ttf-font-awesome unzip usbmuxd usbutils vim xclip xdg-utils xorg-xrandr xorg-server xorg-xinit zip zsh curl wget
 
 gits:
 	rm -Rf $$HOME/.config/nvim
@@ -18,7 +18,7 @@ gits:
 	rm -f $$HOME/.zshrc $$HOME/.zprofile $$HOME/.zshenv $$HOME/.p10k.zsh
 	mkdir -p $$HOME/.fonts
 	curl -fsSL -X GET https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/NerdFontsSymbolsOnly.zip -o /tmp/Symbols.zip
-	unzip -d $$HOME/.fonts/ /tmp/Symbols.zip
+	unzip -o -d $$HOME/.fonts/ /tmp/Symbols.zip
 	fc-cache -r -f -v
 
 rust_install:
@@ -26,11 +26,12 @@ rust_install:
 
 arch_vscode:
 	sh code_install.sh
-	mkdir -p $$HOME/.config/Code
+	mkdir -p $$HOME/.config/Code/User
 	stow --target=$$HOME --restow Code
 	cat Code/.config/Code/User/extensions.list | sed -e "s/^/--install-extension /g" | xargs code
 
 dotfiles:
+	mkdir -p $$HOME/.config/Code/User
 	stow --target=$$HOME --restow */
 
 delete:
