@@ -221,4 +221,6 @@ assign [class="btm"] $ws10
 exec --no-startup-id i3-msg 'workspace $ws3; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace $ws10; exec i3-sensible-terminal btm'
 #exec --no-startup-id i3-msg 'workspace $ws1; exec i3-sensible-terminal nvim'
+for_window [class="X-Plane"] floating enable resize set 1448 928
+
 

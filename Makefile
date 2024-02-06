@@ -1,9 +1,13 @@
-arch_packages:
-	sudo pacman --noconfirm --needed -Sy base base-devel bottom btop btrfs-progs clang cmake compsize dmenu docker dos2unix dosfstools exfatprogs fd firefox fzf gdb gdu git i3 julia kitty lazygit libimobiledevice lightdm lightdm-gtk-greeter lynx man-db man-pages nasm neofetch nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep rofi stow tcpdump tldr tree tree-sitter tree-sitter-cli ttf-font-awesome unzip usbmuxd usbutils vim xclip xdg-utils xorg-xrandr xorg-server xorg-xinit zip zsh curl wget
+arch_packages_common:
+	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl docker dos2unix dosfstools exfatprogs fastfetch fd firefox fzf gdb gdu git gvfs julia kitty lazygit libimobiledevice lynx man-db man-pages nasm nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep stow tcpdump thunar thunar-volman tldr tree tree-sitter tree-sitter-cli ttf-font-awesome unzip usbmuxd usbutils vim wget zip zsh
+
+arch_packages_i3:
+	sudo pacman --noconfirm --needed -Sy dmenu lightdm lightdm-gtk-greeter rofi xclip xorg-xrandr xorg-server xorg-xinit
+
+arch_packages: arch_packages_common yay_install arch_packages_i3
 
 clear_config:
 	rm -Rf $$HOME/.config/nvim/lua/user
-	rm -Rf $$HOME/.config/btop
 	rm -Rf $$HOME/.config/bottom
 	rm -Rf $$HOME/.config/gtk-3.0
 	rm -Rf $$HOME/.config/i3
@@ -25,6 +29,9 @@ fonts:
 	curl -fsSL -X GET https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip -o /tmp/Symbols.zip
 	unzip -o -d $$HOME/.fonts/ /tmp/Symbols.zip
 	fc-cache -r -f -v
+
+yay_install:
+	sh yay_install.sh
 
 rust_install:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
