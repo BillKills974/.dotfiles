@@ -2,7 +2,7 @@ arch_packages_common:
 	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl docker dos2unix dosfstools exfatprogs fastfetch fd firefox fzf gdb gdu git gvfs julia kitty lazygit libimobiledevice lynx man-db man-pages nasm nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep stow tcpdump thunar thunar-volman tldr tree tree-sitter tree-sitter-cli ttf-font-awesome unzip usbmuxd usbutils vim wget zip zsh
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Sy dmenu lightdm lightdm-gtk-greeter rofi xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Sy i3-wm i3blocks i3lock i3status lightdm lightdm-gtk-greeter rofi xclip xorg-xrandr xorg-server xorg-xinit
 
 arch_packages: arch_packages_common yay_install arch_packages_i3
 
