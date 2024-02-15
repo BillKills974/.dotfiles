@@ -9,6 +9,7 @@ arch_packages: arch_packages_common yay_install arch_packages_i3
 clear_config:
 	rm -Rf $$HOME/.config/nvim/lua/user
 	rm -Rf $$HOME/.config/bottom
+	rm -Rf $$HOME/.config/dunst
 	rm -Rf $$HOME/.config/gtk-3.0
 	rm -Rf $$HOME/.config/i3
 	rm -Rf $$HOME/.config/kitty
