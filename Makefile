@@ -40,7 +40,6 @@ rust_install:
 arch_nvim_install:
 	sudo pacman --noconfirm --needed -Sy neovim python-pynvim
 	rm -Rf $$HOME/.config/nvim
-	git clone --depth 1 https://github.com/AstroNvim/AstroNvim $$HOME/.config/nvim
 	stow --target=$$HOME --restow nvim
 
 nvim_clear_local:
