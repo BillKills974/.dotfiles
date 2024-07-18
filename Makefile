@@ -1,10 +1,10 @@
 arch_packages_common:
-	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl dos2unix dosfstools exfatprogs fastfetch fd firefox fzf gdb gdu git gvfs julia kitty lazygit libimobiledevice lynx man-db man-pages nasm networkmanager network-manager-applet nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep stow tcpdump thunar thunar-volman tldr tree tree-sitter tree-sitter-cli ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono unzip usbmuxd usbutils vim wget zip zsh
+	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl dos2unix dosfstools exfatprogs fastfetch fd firefox fzf gdb gdu git gvfs julia kitty lazygit libimobiledevice lynx man-db man-pages nasm networkmanager network-manager-applet nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep rsync stow tcpdump thunar thunar-volman tldr tree tree-sitter tree-sitter-cli ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono unzip usbmuxd usbutils vim wget zip zsh
 
 arch_packages_i3:
 	sudo pacman --noconfirm --needed -Sy dmenu dunst i3-wm i3blocks i3lock i3status lightdm lightdm-gtk-greeter rofi xclip xorg-xrandr xorg-server xorg-xinit
 
-arch_packages: arch_packages_common yay_install arch_packages_i3
+arch_packages: arch_packages_common arch_packages_i3
 
 clear_config:
 	rm -Rf $$HOME/.config/nvim/lua/user
@@ -62,7 +62,7 @@ delete:
 
 all_arch_nvim: arch_packages zsh_install rust_install nvim_clear_local arch_nvim_install dotfiles
 
-all_arch_vscode: arch_packages zsh_install rust_install arch_vscode_install dotfiles
+all_arch_vscode: arch_packages yay_install zsh_install rust_install arch_vscode_install dotfiles
 
-all_arch: arch_packages zsh_install rust_install nvim_clear_local arch_nvim_install arch_vscode_install dotfiles
+all_arch: arch_packages yay_install zsh_install rust_install nvim_clear_local arch_nvim_install arch_vscode_install dotfiles
 
