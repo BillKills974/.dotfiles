@@ -1,10 +1,22 @@
-arch_packages_common:
-	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl dos2unix dosfstools exfatprogs fastfetch fd firefox fzf gdb gdu git go gvfs julia kitty lazygit libimobiledevice lxsession lynx man-db man-pages nasm networkmanager network-manager-applet nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep rsync stow tcpdump thunar thunar-volman tldr tree tree-sitter tree-sitter-cli ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono unzip usbmuxd usbutils vim wget zip zsh
+arch_packages_minimal:
+	sudo pacman --noconfirm --needed -Sy base base-devel bottom btrfs-progs clang cmake compsize curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdb gdu git github-cli go gvfs imagemagick inxi jq julia lazygit libimobiledevice lynx man-db man-pages nasm networkmanager nmap npm openbsd-netcat openssh pciutils pv python-pip python-virtualenv ripgrep rsync stow tcpdump tldr tree tree-sitter tree-sitter-cli ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono vulkan-headers vulkan-icd-loader unzip usbmuxd usbutils vim wget zip zsh
+
+arch_packages_audio:
+	sudo pacman --noconfirm --needed -Sy cava mpd pavucontrol playerctl
+
+arch_packages_bt:
+	sudo pacman --noconfirm --needed -Sy bluez bluez-utils
+	
+arch_packages_guiapps:
+	sudo pacman --noconfirm --needed -Sy blueman dunst ffmpegthumbnailer firefox kitty kvantum mpv network-manager-applet playerctl qt5ct qt6ct qt6-svg thunar thunar-volman tumbler udiskie xdg-user-dirs xdg-utils
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Sy dmenu dunst i3-wm i3blocks i3lock i3status lightdm lightdm-gtk-greeter rofi xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Sy i3-wm i3blocks i3lock i3status lightdm lightdm-gtk-greeter lxsession-gtk3 rofi xclip xdg-desktop-portal-gtk xorg-xrandr xorg-server xorg-xinit
 
-arch_packages: arch_packages_common arch_packages_i3
+arch_packages_hypr:
+	sudo pacman --noconfirm --needed -Sy cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi-wayland satty sddm slurp swww waybar wl-clipboard xdg-desktop-portal-hyprland
+
+arch_packages: arch_packages_minimal arch_packages_i3
 
 clear_config:
 	rm -Rf $$HOME/.config/nvim/lua/user
@@ -15,6 +27,8 @@ clear_config:
 	rm -Rf $$HOME/.config/kitty
 	rm -Rf $$HOME/.config/rofi
 	rm -Rf $$HOME/.config/Code/User
+	rm -Rf $$HOME/.config/hypr
+	rm -Rf $$HOME/.config/waybar
 	rm -f $$HOME/.zshrc $$HOME/.zprofile $$HOME/.zshenv $$HOME/.p10k.zsh
 	
 zsh_install:
