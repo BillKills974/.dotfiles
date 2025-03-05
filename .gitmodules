@@ -1,4 +1,8 @@
-[submodule "nvim/.config/nvim"]
-	path = nvim/.config/nvim
+[submodule "stow/nvim/.config/nvim"]
+	path = stow/nvim/.config/nvim
 	url = https://github.com/BillKills974/astronvim_v4
+	branch = main
+[submodule "sysconf/hyprland/usr/share/sddm/themes/BillKills974"]
+	path = sysconf/hyprland/usr/share/sddm/themes/BillKills974
+	url = https://github.com/BillKills974/sddm-BillKills974-theme
 	branch = main
