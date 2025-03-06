@@ -95,8 +95,8 @@ button:hover {
   margin-right: 2px;
   padding-left: 4px;
   padding-right: 4px;
-  background-color: rgba (0, 0, 0, 0); /* Color de fondo de los módulos */
-  border-radius: 30px; /* Bordes redondeados */
+  background-color: rgba (0, 0, 0, 0);
+  border-radius: 30px;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
   border: 0px solid #bbadd9;
 }
@@ -134,8 +134,31 @@ button:hover {
 }
 
 #battery {
+  color: #ffffff;
+}
+
+#battery.warning {
+  color: @yellow;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+
+#battery.full {
   color: @green;
-  border-bottom: 2px solid @green;
+}
+
+#battery.charging {
+  color: #00aaff;
+}
+
+#battery.plugged {
+  color: @green;
+}
+
+#backlight {
+   color: #fffffF;
 }
 
 @keyframes blink {
