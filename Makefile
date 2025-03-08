@@ -1,18 +1,18 @@
 arch_packages_minimal:
-	sudo pacman --noconfirm --needed -Sy 7zip base bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
+	sudo pacman --noconfirm --needed -Sy 7zip base bluetui bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
+
+arch_packages_dev:
+	sudo pacman --noconfirm --needed -Sy base-devel clang cmake git gdb github-cli jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv tree-sitter tree-sitter-cli vulkan-headers
 
 arch_packages_termtools:
 	sudo pacman --noconfirm --needed -Sy asciinema asciiquarium btop catimg cmatrix cowsay figlet htop kmon lolcat nvtop perf sc sl turbostat zps
 	yay --noconfirm --needed -Sy cava
 
-arch_packages_dev:
-	sudo pacman --noconfirm --needed -Sy base-devel clang cmake git gdb github-cli jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv tree-sitter tree-sitter-cli vulkan-headers
-
 arch_packages_audio:
 	sudo pacman --noconfirm --needed -Sy mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wireplumber
 
 arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Sy layer-shell-qt qt5-declarative qt5-virtualkeyboard qt5ct qt6-5compat qt6-svg qt6-virtualkeyboard qt6ct sddm ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono  
+	sudo pacman --noconfirm --needed -Sy layer-shell-qt qt6-5compat qt6-svg qt6-virtualkeyboard qt6ct sddm ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
@@ -64,7 +64,7 @@ fonts:
 	fc-cache -r -f -v
 
 yay_install:
-	sh yay_install.sh
+	sh scripts/yay_install.sh
 
 rust_install:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -80,5 +80,5 @@ dotfiles: clear_config
 delete:
 	stow --dir=stow --target=$$HOME --delete $$(echo stow/* | sed -e "s:stow/::g")
 
-all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_termtools arch_packages_audio arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install rust_install dotfiles
+all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install rust_install dotfiles
 

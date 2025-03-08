@@ -39,7 +39,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- $i3lockwall
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id lxpolkit
 exec --no-startup-id nm-applet
-exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/backgrounds/background.jpg
+exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/backgrounds/wallpaper.jpg
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
