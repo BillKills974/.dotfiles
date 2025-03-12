@@ -1,30 +1,29 @@
 arch_packages_minimal:
-	sudo pacman --noconfirm --needed -Sy 7zip base bluetui bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
+	sudo pacman --noconfirm --needed -Syu 7zip base bluetui bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
 
 arch_packages_dev:
-	sudo pacman --noconfirm --needed -Sy base-devel clang cmake git gdb github-cli jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv tree-sitter tree-sitter-cli vulkan-headers
+	sudo pacman --noconfirm --needed -Syu base-devel clang cmake git gdb github-cli jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv tree-sitter tree-sitter-cli vulkan-headers
 
 arch_packages_termtools:
-	sudo pacman --noconfirm --needed -Sy asciinema asciiquarium btop catimg cmatrix cowsay figlet htop kmon lolcat nvtop perf sc sl turbostat zps
-	yay --noconfirm --needed -Sy cava
+	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sc sl turbostat zps
 
 arch_packages_audio:
-	sudo pacman --noconfirm --needed -Sy mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wireplumber
+	sudo pacman --noconfirm --needed -Syu mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wireplumber
 
 arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Sy layer-shell-qt qt6-5compat qt6-svg qt6-virtualkeyboard qt6ct sddm ttf-font-awesome ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto
+	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
-	sudo pacman --noconfirm --needed -Sy blueman feh ffmpegthumbnailer firefox gamemode goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mangohud mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
+	sudo pacman --noconfirm --needed -Syu blueman feh ffmpegthumbnailer firefox gamemode goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mangohud mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Sy dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi-wayland xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi-wayland xclip xorg-xrandr xorg-server xorg-xinit
 	sudo sh scripts/sys_i3.sh
 
 arch_packages_hyprland:
-	sudo pacman --noconfirm --needed -Sy cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi-wayland satty sddm slurp swaync uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
-	yay --noconfirm --needed -Sy wlogout
+	sudo pacman --noconfirm --needed -Syu cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi-wayland satty sddm slurp swaync uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
+	yay --noconfirm --needed -Syu wlogout
 	sudo sh scripts/sys_hyprland.sh
 
 clear_config:
@@ -82,3 +81,6 @@ delete:
 
 all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install rust_install dotfiles
 
+arch_hyprland_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install rust_install dotfiles
+
+arch_i3_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install rust_install dotfiles
