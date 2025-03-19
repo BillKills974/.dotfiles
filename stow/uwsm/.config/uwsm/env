@@ -1,6 +1,8 @@
 export XCURSOR_SIZE=24
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME=qt6ct
+export SDL_VIDEODRIVER='wayland,x11'
+export GDK_BACKEND='wayland,x11'
 
 #if [ -f /sys/module/nvidia/version ]; then
 #    export LIBVA_DRIVER_NAME=nvidia
@@ -12,5 +14,4 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 #    export __GL_GSYNC_ALLOWED=1
 #    export __GL_VRR_ALLOWED=1
 #    export __GL_MaxFramesAllowed=1
-#    export SDL_VIDEO_DRIVER=wayland
 #fi
