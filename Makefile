@@ -30,7 +30,7 @@ arch_steam:
 	sudo pacman --noconfirm --needed -Syu gamemode lib32-gamemode lib32-mangohud mangohud steam
 
 arch_nvidia:
-	sudo pacman --noconfirm --needed -Syu libvdpau-va-gl lib32-libvdpau lib32-opencl-nvidia libva-nvidia-driver nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
+	sudo pacman --noconfirm --needed -Syu libvdpau-va-gl lib32-libvdpau lib32-opencl-nvidia lib32-nvidia-utils libva-nvidia-driver nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
 
 clear_config:
 	rm -Rf $$HOME/.config/backgrounds
