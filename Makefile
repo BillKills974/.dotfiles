@@ -8,10 +8,10 @@ arch_packages_termtools:
 	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sc sl turbostat zps
 
 arch_packages_audio:
-	sudo pacman --noconfirm --needed -Syu mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse speech-dispatcher wireplumber
+	sudo pacman --noconfirm --needed -Syu flac lib32-flac mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse speech-dispatcher wireplumber
 
 arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Syu gstreamer-vaapi gnu-free-fonts layer-shell-qt libvdpau-va-gl noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
+	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
@@ -27,7 +27,7 @@ arch_packages_hyprland:
 	sudo sh scripts/sys_hyprland.sh
 
 arch_steam:
-	sudo pacman --noconfirm --needed -Syu gamemode lib32-gamemode lib32-mangohud mangohud steam
+	sudo pacman --noconfirm --needed -Syu gamemode gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly lib32-gstreamer lib32-gst-plugins-base lib32-gst-plugins-base-libs lib32-gst-plugins-good lib32-libva lib32-gamemode lib32-mangohud libva-utils mangohud steam
 
 arch_nvidia:
 	sudo pacman --noconfirm --needed -Syu libvdpau-va-gl lib32-libvdpau lib32-opencl-nvidia lib32-nvidia-utils libva-nvidia-driver nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
