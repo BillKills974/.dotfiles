@@ -5,7 +5,7 @@ arch_packages_dev:
 	sudo pacman --noconfirm --needed -Syu base-devel clang cmake git gdb github-cli go jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv rustup tree-sitter tree-sitter-cli vulkan-headers webkit2gtk-4.1
 
 arch_packages_termtools:
-	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sc sl turbostat zps
+	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sl turbostat zps
 
 arch_packages_audio:
 	sudo pacman --noconfirm --needed -Syu flac lib32-flac mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse speech-dispatcher wireplumber
