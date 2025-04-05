@@ -11,7 +11,7 @@ arch_packages_audio:
 	sudo pacman --noconfirm --needed -Syu flac lib32-flac mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse speech-dispatcher wireplumber
 
 arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
+	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-fira-code ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
