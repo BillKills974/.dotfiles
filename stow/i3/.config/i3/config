@@ -122,16 +122,16 @@ bindsym $mod+q focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: ide"
-set $ws2 "2: web"
-set $ws3 "3: terms"
-set $ws4 "4: ideas"
-set $ws5 "5: docs"
-set $ws6 "6: vlc"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: sysmon"
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+ampersand workspace number $ws1
@@ -222,6 +222,8 @@ focus_follows_mouse no
 assign [class="nvim"] $ws1
 assign [class="Code"] $ws1
 assign [class="firefox"] $ws2
+assign [class="steam"] $ws4
+assign [class="discord"] $ws5
 assign [class="vlc"] $ws6
 assign [class="btm"] $ws10
 exec --no-startup-id i3-msg 'workspace $ws3; exec i3-sensible-terminal'
