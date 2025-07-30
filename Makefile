@@ -8,7 +8,7 @@ arch_packages_termtools:
 	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sl turbostat zps
 
 arch_packages_audio:
-	sudo pacman --noconfirm --needed -Syu flac lib32-flac mpd playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse speech-dispatcher wireplumber
+	sudo pacman --noconfirm --needed -Syu flac fluidsynth lib32-flac mpd ncmpcpp playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse rmpc soundfont-fluid speech-dispatcher wireplumber
 
 arch_packages_sddm:
 	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
@@ -43,6 +43,7 @@ clear_config:
 	rm -Rf $$HOME/.config/i3
 	rm -Rf $$HOME/.config/kitty
 	rm -Rf $$HOME/.config/MangoHud
+	rm -Rf $$HOME/.config/mpd
 	rm -Rf $$HOME/.config/nvim
 	rm -Rf $$HOME/.config/OpenRGB
 	rm -Rf $$HOME/.config/qt?ct
@@ -56,6 +57,8 @@ clear_config:
 	mkdir -p $$HOME/.config/backgrounds
 	mkdir -p $$HOME/.config/gtk-3.0
 	mkdir -p $$HOME/.config/gtk-4.0
+	mkdir -p $$HOME/.cache/mpd
+	mkdir -p $$HOME/.config/mpd/playlists
 	mkdir -p $$HOME/.config/qt5ct
 	mkdir -p $$HOME/.config/qt6ct
 	mkdir -p $$HOME/.config/xfce4
