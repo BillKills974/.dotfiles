@@ -137,7 +137,7 @@
         "path": "/"
     },
     "custom/power": {
-        "format": "⏻ ",
+        "format": "",
         "tooltip": false,
         "on-click": "wlogout"
     }
@@ -175,11 +175,11 @@
 	"tooltip": false
     },
     "mpris": {
-	"format": "🎵{status_icon} {artist}-{title}",
-	"format-paused": "🎵{status_icon} <i>{artist}-{title}</i>",
+	"format": "{status_icon} {artist}-{title}",
+	"format-paused": "{status_icon} <i>{artist}-{title}</i>",
 	"status-icons": {
 		"playing": "",
-		"paused": "⏸"
+		"paused": ""
 	}
 	// "ignored-players": ["firefox"]
     },
