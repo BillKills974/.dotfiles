@@ -35,7 +35,8 @@
             "2": "",
             "3": "",
             "4": "",
-            "5": "",
+            "5": "",
+            "6": "",
             "10": "",
             "urgent": "",
             "focused": "",
@@ -56,7 +57,7 @@
    "cpu": {
         "format": "{max_frequency}GHz <span color=\"darkgray\">| {usage}%</span> ",
         "tooltip": false,
-	"on-click" : "! pidof missioncenter && missioncenter",
+	"on-click" : "pidof missioncenter || missioncenter",
 	"interval": 1
     },
     "memory": {
@@ -65,14 +66,17 @@
     },
     "temperature": {
         "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-	"critical-threshold": 80,
+	"warning-threshold": 80,
+	"critical-threshold": 85,
         "format": "{temperatureC}°C {icon}",
+        "format-warning": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}",
 	"interval": 2,
 	"on-click" : "pidof zenmonitor || zenmonitor",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
+            ""
         ],
 	"tooltip": false
     },
@@ -100,7 +104,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -213,14 +217,14 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -235,7 +239,7 @@
     "gamemode": {
         "format": "{glyph}",
         "format-alt": "{glyph} {count}",
-        "glyph": "",
+        "glyph": "󰊗",
         "hide-not-running": true,
         "use-icon": true,
         "icon-name": "input-gaming-symbolic",
@@ -246,7 +250,7 @@
     },
     "wireplumber": {
 	"format": "{icon} {volume}%",
-	"format-muted": " Muted",
+	"format-muted": " Muted",
 	"on-click": "pavucontrol",
 	"on-click-right": "helvum",
 	"format-icons": [
@@ -260,10 +264,10 @@
 	"interval": 5,
 	"max-length": 30,
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "Connected ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-ethernet": "Connected ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "keyboard-state": {

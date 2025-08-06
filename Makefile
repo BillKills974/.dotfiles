@@ -5,17 +5,17 @@ arch_packages_dev:
 	sudo pacman --noconfirm --needed -Syu base-devel clang cmake git gdb github-cli go jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv rustup tree-sitter tree-sitter-cli vulkan-headers webkit2gtk-4.1
 
 arch_packages_termtools:
-	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sl turbostat zps
+	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sl stress s-tui turbostat zps
 
 arch_packages_audio:
 	sudo pacman --noconfirm --needed -Syu flac fluidsynth lib32-flac mpd ncmpcpp playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse rmpc soundfont-fluid speech-dispatcher wireplumber
 
 arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-font-awesome ttf-jetbrains-mono ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
+	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-jetbrains-mono ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
-	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
+	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vlc-plugins-all vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
 
 arch_packages_i3:
 	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi-wayland xclip xorg-xrandr xorg-server xorg-xinit

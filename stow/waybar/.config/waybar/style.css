@@ -3,7 +3,7 @@
 * {
   border: none;
   /* border-radius: 2px;*/
-  font-family: 'Symbols Nerd Font Mono', FontAwesome, FreeMono, monospace;
+  font-family: FreeMono, 'Symbols Nerd Font Mono';
   font-size: 12px;
   min-height: 0;
   font-weight: bold;
@@ -318,6 +318,10 @@ button:hover {
 
 #temperature {
   color: #ffffff;
+}
+
+#temperature.warning {
+  color: #ffff00;
 }
 
 #temperature.critical {
