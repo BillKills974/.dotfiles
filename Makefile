@@ -1,4 +1,7 @@
-arch_packages_minimal:
+arch_enable_multilib:
+	sudo sed -i -e '/^#\[multilib\]/,+1s///' /etc/pacman.conf
+
+arch_packages_minimal: arch_enable_multilib
 	sudo pacman --noconfirm --needed -Syu 7zip base bluetui bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync snapper snap-pac stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
 
 arch_packages_dev:
