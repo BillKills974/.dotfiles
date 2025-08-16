@@ -65,14 +65,14 @@
 	"interval": 5
     },
     "temperature": {
-        "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+        "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+	"input-filename": "temp3_input",
 	"warning-threshold": 80,
 	"critical-threshold": 85,
         "format": "{temperatureC}°C {icon}",
         "format-warning": "{temperatureC}°C {icon}",
         "format-critical": "{temperatureC}°C {icon}",
 	"interval": 2,
-	"on-click" : "pidof zenmonitor || zenmonitor",
         "format-icons": [
             "",
             "",
