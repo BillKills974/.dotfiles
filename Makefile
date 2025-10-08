@@ -21,11 +21,12 @@ arch_packages_guiapps:
 	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vlc-plugins-all vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi-wayland xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi xclip xorg-xrandr xorg-server xorg-xinit
+	sudo rm -f /etc/xdg/autostart/lxpolkit.desktop
 	sudo sh scripts/sys_i3.sh
 
 arch_packages_hyprland:
-	sudo pacman --noconfirm --needed -Syu cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi-wayland satty sddm slurp swaync uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
+	sudo pacman --noconfirm --needed -Syu cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi satty slurp swaync uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
 	yay --noconfirm --needed -Syu wlogout
 	sudo sh scripts/sys_hyprland.sh
 
@@ -33,7 +34,10 @@ arch_steam:
 	sudo pacman --noconfirm --needed -Syu gamemode gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly lib32-gstreamer lib32-gst-plugins-base lib32-gst-plugins-base-libs lib32-gst-plugins-good lib32-libva lib32-gamemode lib32-mangohud libva-utils mangohud steam
 
 arch_nvidia:
-	sudo pacman --noconfirm --needed -Syu libvdpau-va-gl lib32-libvdpau lib32-opencl-nvidia lib32-nvidia-utils libva-nvidia-driver nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
+	sudo pacman --noconfirm --needed -Syu lib32-libvdpau lib32-mesa lib32-nvidia-utils lib32-opencl-nvidia libva-nvidia-driver libvdpau-va-gl mesa nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
+
+arch_amd:
+	sudo pacman --noconfirm --needed -Syu lib32-mesa lib32-opencl-mesa lib32-vulkan-radeon mesa opencl-mesa vulkan-radeon
 
 clear_config:
 	rm -Rf $$HOME/.config/backgrounds
@@ -100,6 +104,6 @@ delete:
 
 all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
 
-arch_hyprland_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
+arch_hyprland_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
 
-arch_i3_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
+arch_i3_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_guiapps zsh_install dotfiles
