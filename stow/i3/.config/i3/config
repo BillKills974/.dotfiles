@@ -26,7 +26,7 @@ font pango:FreeMono 8
 exec --no-startup-id dex --autostart --environment i3
 
 
-exec_always --no-startup-id dunst
+#exec_always --no-startup-id dunst
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -40,6 +40,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- $i3lockwall
 exec --no-startup-id lxpolkit
 exec --no-startup-id nm-applet
 exec_always --no-startup-id feh --no-fehbg --bg-fill $HOME/.config/backgrounds/wallpaper.jpg
+#exec_always --no-startup-id $i3lockwall
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

@@ -26,7 +26,7 @@ arch_packages_i3:
 	sudo sh scripts/sys_i3.sh
 
 arch_packages_hyprland:
-	sudo pacman --noconfirm --needed -Syu cliphist grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi satty slurp swaync uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
+	sudo pacman --noconfirm --needed -Syu cliphist dunst grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi satty slurp uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
 	yay --noconfirm --needed -Syu wlogout
 	sudo sh scripts/sys_hyprland.sh
 
@@ -55,7 +55,6 @@ clear_config:
 	rm -Rf $$HOME/.config/OpenRGB
 	rm -Rf $$HOME/.config/qt?ct
 	rm -Rf $$HOME/.config/rofi
-	rm -Rf $$HOME/.config/swaync
 	rm -Rf $$HOME/.config/uwsm
 	rm -Rf $$HOME/.config/waybar
 	rm -Rf $$HOME/.config/wlogout

@@ -293,7 +293,7 @@
     },
    "custom/notification-center": {
 	"format": "󰎟",
-	"on-click": "swaync-client -t",
+	"on-click": "dunstctl history-pop",
 	"tooltip": true,
 	"tooltip-format": "Notifications"
     }
