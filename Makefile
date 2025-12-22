@@ -13,15 +13,15 @@ arch_packages_termtools:
 arch_packages_audio:
 	sudo pacman --noconfirm --needed -Syu flac fluidsynth lib32-flac mpd ncmpcpp playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse rmpc soundfont-fluid speech-dispatcher wireplumber
 
-arch_packages_sddm:
-	sudo pacman --noconfirm --needed -Syu gnu-free-fonts layer-shell-qt noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra qt5-wayland qt6-5compat qt6-svg qt6-virtualkeyboard qt6-wayland qt6ct sddm ttf-jetbrains-mono ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono ttf-ubuntu-font-family
+arch_packages_greetd:
+	sudo pacman --noconfirm --needed -Syu gnu-free-fonts greetd greetd-tuigreet noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono
 	sudo sh scripts/sys_common.sh
 
 arch_packages_guiapps:
-	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mission-center mpv network-manager-applet openrgb pavucontrol qalculate-qt thunar thunar-shares-plugin thunar-volman tumbler udiskie vlc vlc-plugins-all vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
+	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mpv network-manager-applet openrgb pavucontrol qalculate-qt qt5-wayland qt6-5compat qt6-wayland qt6ct thunar thunar-shares-plugin thunar-volman tumbler udiskie vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession-gtk3 maim rofi xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession maim rofi xclip xorg-xrandr xorg-server xorg-xinit
 	sudo rm -f /etc/xdg/autostart/lxpolkit.desktop
 	sudo sh scripts/sys_i3.sh
 
@@ -101,8 +101,8 @@ dotfiles: clear_config
 delete:
 	stow --dir=stow --target=$$HOME --delete $$(echo stow/* | sed -e "s:stow/::g")
 
-all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
+all_arch: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_greetd arch_packages_i3 arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
 
-arch_hyprland_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
+arch_hyprland_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_greetd arch_packages_hyprland arch_packages_guiapps zsh_install dotfiles
 
-arch_i3_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_sddm arch_packages_i3 arch_packages_guiapps zsh_install dotfiles
+arch_i3_only: arch_packages_minimal arch_packages_dev yay_install arch_packages_audio arch_packages_termtools arch_packages_greetd arch_packages_i3 arch_packages_guiapps zsh_install dotfiles
