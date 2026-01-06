@@ -21,12 +21,12 @@ arch_packages_guiapps:
 	sudo pacman --noconfirm --needed -Syu blueman discord feh ffmpegthumbnailer firefox goverlay gvfs gvfs-afc gvfs-dnssd gvfs-mtp gvfs-nfs gvfs-smb helvum kitty kvantum kvantum-qt5 lact mesa-utils mpv network-manager-applet openrgb pavucontrol qalculate-qt qt5-wayland qt6-5compat qt6-wayland qt6ct thunar thunar-shares-plugin thunar-volman tumbler udiskie vulkan-icd-loader vulkan-tools xdg-desktop-portal-gtk xdg-user-dirs xdg-utils
 
 arch_packages_i3:
-	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession maim rofi xclip xorg-xrandr xorg-server xorg-xinit
+	sudo pacman --noconfirm --needed -Syu dunst i3-wm i3blocks i3lock i3status lxsession maim rofi rofi-calc rofi-emoji xclip xorg-xrandr xorg-server xorg-xinit
 	sudo rm -f /etc/xdg/autostart/lxpolkit.desktop
 	sudo sh scripts/sys_i3.sh
 
 arch_packages_hyprland:
-	sudo pacman --noconfirm --needed -Syu cliphist dunst grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi satty slurp uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
+	sudo pacman --noconfirm --needed -Syu cliphist dunst grim hypridle hyprland hyprland-qt-support hyprlock hyprpaper hyprpicker hyprpolkitagent rofi rofi-calc rofi-emoji satty slurp uwsm waybar wl-clipboard xdg-desktop-portal-hyprland
 	yay --noconfirm --needed -Syu wlogout
 	sudo sh scripts/sys_hyprland.sh
 
