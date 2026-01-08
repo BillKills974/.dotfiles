@@ -112,6 +112,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias mpvhdr="ENABLE_HDR_WSI=1 mpv --target-colorspace-hint=yes --target-colorspace-hint-mode=source --fullscreen"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ ! -f /opt/homebrew/opt/nvm/nvm.sh ]] || source /opt/homebrew/opt/nvm/nvm.sh
