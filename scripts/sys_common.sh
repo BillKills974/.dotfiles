@@ -3,3 +3,4 @@ if [ -d sysconf/common ]; then
     cd sysconf/common && cp -rvf ./* /
     cd -
 fi
+systemctl enable greetd.service
