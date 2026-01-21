@@ -1,3 +1,5 @@
 #!/bin/sh
-cd sysconf/common && cp -rvf ./* /
-cd -
+if [ -d sysconf/common ]; then
+    cd sysconf/common && cp -rvf ./* /
+    cd -
+fi
