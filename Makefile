@@ -31,10 +31,10 @@ arch_packages_hyprland:
 	sudo sh scripts/sys_hyprland.sh
 
 arch_steam:
-	sudo pacman --noconfirm --needed -Syu gamemode gstreamer-vaapi gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly lib32-gstreamer lib32-gst-plugins-base lib32-gst-plugins-base-libs lib32-gst-plugins-good lib32-libva lib32-gamemode lib32-mangohud libva-utils mangohud steam
+	sudo pacman --noconfirm --needed -Syu gamemode gst-plugin-va gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly lib32-gstreamer lib32-gst-plugins-base lib32-gst-plugins-base-libs lib32-gst-plugins-good lib32-libva lib32-gamemode lib32-mangohud libva-utils mangohud steam
 
 arch_nvidia:
-	sudo pacman --noconfirm --needed -Syu lib32-libvdpau lib32-mesa lib32-nvidia-utils lib32-opencl-nvidia libva-nvidia-driver libvdpau-va-gl mesa nvidia-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
+	sudo pacman --noconfirm --needed -Syu lib32-libvdpau lib32-mesa lib32-nvidia-utils lib32-opencl-nvidia libva-nvidia-driver libvdpau-va-gl mesa nvidia-open-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
 
 arch_amd:
 	sudo pacman --noconfirm --needed -Syu lib32-mesa lib32-opencl-mesa lib32-vulkan-radeon mesa opencl-mesa vulkan-radeon
