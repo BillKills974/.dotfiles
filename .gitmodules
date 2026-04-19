@@ -1,4 +1,0 @@
-[submodule "stow/nvim/.config/nvim"]
-	path = stow/nvim/.config/nvim
-	url = https://github.com/BillKills974/astronvim_v4
-	branch = main

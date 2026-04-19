@@ -51,7 +51,6 @@ clear_config:
 	rm -Rf $$HOME/.config/kitty
 	rm -Rf $$HOME/.config/MangoHud
 	rm -Rf $$HOME/.config/mpd
-	rm -Rf $$HOME/.config/nvim
 	rm -Rf $$HOME/.config/OpenRGB
 	rm -Rf $$HOME/.config/qt?ct
 	rm -Rf $$HOME/.config/rofi
