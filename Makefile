@@ -5,13 +5,13 @@ arch_packages_minimal: arch_enable_multilib
 	sudo pacman --noconfirm --needed -Syu 7zip base bluetui bluez bluez-utils bottom brightnessctl btrfs-progs compsize cpupower curl dos2unix dosfstools exfatprogs fastfetch fd fzf gdu i2c-tools imagemagick inxi libimobiledevice lynx man-db man-pages networkmanager nmap openbsd-netcat openssh pciutils power-profiles-daemon pv ripgrep rsync snapper snap-pac stow tcpdump tldr tree unzip usbmuxd usbutils vim wget zip zsh
 
 arch_packages_dev:
-	sudo pacman --noconfirm --needed -Syu base-devel clang cmake git gdb github-cli go jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv rustup tree-sitter tree-sitter-cli vulkan-headers webkit2gtk-4.1
+	sudo pacman --noconfirm --needed -Syu base-devel clang cmake git gdb github-cli go jq julia lazygit linux-headers nasm neovim npm python-pip python-pynvim python-virtualenv rustup tree-sitter tree-sitter-cli vulkan-headers
 
 arch_packages_termtools:
 	sudo pacman --noconfirm --needed -Syu asciinema asciiquarium btop catimg cava cmatrix cowsay figlet htop kmon lolcat nvtop perf sl stress s-tui turbostat zps
 
 arch_packages_audio:
-	sudo pacman --noconfirm --needed -Syu flac fluidsynth lib32-flac mpd ncmpcpp playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse rmpc soundfont-fluid speech-dispatcher wireplumber
+	sudo pacman --noconfirm --needed -Syu flac fluidsynth mpd ncmpcpp playerctl pipewire pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse rmpc soundfont-fluid speech-dispatcher wireplumber
 
 arch_packages_greetd:
 	sudo pacman --noconfirm --needed -Syu gnu-free-fonts greetd greetd-tuigreet noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-roboto ttf-roboto-mono
@@ -31,13 +31,13 @@ arch_packages_hyprland:
 	sudo sh scripts/sys_hyprland.sh
 
 arch_steam:
-	sudo pacman --noconfirm --needed -Syu gamemode gst-plugin-va gst-libav gst-plugins-bad gst-plugins-good gst-plugins-ugly lib32-gstreamer lib32-gst-plugins-base lib32-gst-plugins-base-libs lib32-gst-plugins-good lib32-libva lib32-gamemode lib32-mangohud libva-utils mangohud steam
+	sudo pacman --noconfirm --needed -Syu gamemode lib32-gamemode lib32-mangohud mangohud steam
 
 arch_nvidia:
-	sudo pacman --noconfirm --needed -Syu lib32-libvdpau lib32-mesa lib32-nvidia-utils lib32-opencl-nvidia libva-nvidia-driver libvdpau-va-gl mesa nvidia-open-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
+	sudo pacman --noconfirm --needed -Syu lib32-nvidia-utils nvidia-open-dkms nvidia-settings nvidia-utils opencl-nvidia vdpauinfo
 
 arch_amd:
-	sudo pacman --noconfirm --needed -Syu lib32-mesa lib32-opencl-mesa lib32-vulkan-radeon mesa opencl-mesa vulkan-radeon
+	sudo pacman --noconfirm --needed -Syu lib32-vulkan-radeon vulkan-radeon
 
 clear_config:
 	rm -Rf $$HOME/.config/backgrounds

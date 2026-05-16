@@ -1,0 +1,6 @@
+-- Variables
+
+launch_prefix = "uwsm app --"
+terminal = "kitty"
+fileManager = "thunar"
+menu = "rofi -modi drun,run,ssh,window,keys,emoji,calc,filebrowser -show drun -run-command \"uwsm app -- {cmd}\""

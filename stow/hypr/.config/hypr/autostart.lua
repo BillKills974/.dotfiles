@@ -1,0 +1,8 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd(launch_prefix .. " nm-applet")
+    hl.exec_cmd(launch_prefix .. " blueman-applet")
+    hl.exec_cmd(launch_prefix .. " udiskie")
+    hl.exec_cmd(launch_prefix .. " wl-paste --type text --watch cliphist store")
+    hl.exec_cmd(launch_prefix .. " wl-paste --type image --watch cliphist store")
+    hl.exec_cmd(launch_prefix .. " " .. terminal, { workspace = 1 })
+end)
