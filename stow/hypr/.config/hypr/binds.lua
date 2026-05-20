@@ -79,7 +79,7 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tru
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- Screenshot
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grim -g \"$(slurp -o -r -c '##ff0000ff)'\" -t ppm - | satty -f - --fullscreen --output-filename ~/Images/Screenshots/satty-$(date '+%Y%m%d_%H%M%S').png"))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd("grim -g \"$(slurp -o -r -c '#ff0000ff')\" -t ppm - | satty -f - --fullscreen --output-filename ~/Images/Screenshots/satty-$(date '+%Y%m%d_%H%M%S').png"))
 
 -- Cycle windows
 hl.bind(mainMod .. " + Tab", hl.dsp.window.cycle_next({ next = true }))
